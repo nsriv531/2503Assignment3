@@ -4,9 +4,9 @@ public class QNode<T> {
 	private T data;
 	private QNode<T> next;
 	
-	public QNode(T data) {
+	public QNode(T data, QNode<T> next) {
 		this.data = data;
-		next = null;
+		this.next = next;
 	}
 
 	public T getData() {
