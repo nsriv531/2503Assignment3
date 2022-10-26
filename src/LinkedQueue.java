@@ -1,8 +1,7 @@
 
 public class LinkedQueue<T> implements QueueInterface<T> {
 	
-	private QNode<T> front;
-	private QNode<T> rear;
+	private QNode<T> front, rear;
 	private int size;
 	
 	public LinkedQueue() {
@@ -12,10 +11,24 @@ public class LinkedQueue<T> implements QueueInterface<T> {
 	}
 
 	public void enqueue(T t) {
+		QNode<T> temp = new QNode<>(t);
+		
+		if (rear == null) {
+			front = rear = temp;
+			return;
+		}
+		
+		rear.setNext(temp);
+		rear = temp;
 		
 	}
 
 	public T dequeue() {
+		
+		if (front == null) {
+			rear = null;
+			return null;
+		}
 		return null;
 	}
 
