@@ -11,29 +11,36 @@ public class LinkedQueue<T> implements QueueInterface<T> {
 	}
 
 	public void enqueue(T t) {
-		QNode<T> temp = new QNode<>(t);
 		
 		if (rear == null) {
-			front = rear = temp;
+			front = rear = new QNode<T>(t);
 			return;
+		} else {
+			rear.setNext(new QNode<T>(t));
 		}
 		
-		rear.setNext(temp);
-		rear = temp;
+		size++;
 		
 	}
 
 	public T dequeue() {
 		
-		if (front == null) {
+		if (isEmpty()) {
+			System.out.println("Nothing in the Queue");
 			rear = null;
 			return null;
 		}
-		return null;
+		
+		QNode<T> temp = new QNode<>(front.getData());
+		front = front.getNext();
+		
+		size--;
+		
+		return temp.getData();
 	}
 
 	public T peek() {
-		return null;
+		return front.getData();
 	}
 
 	public int getSize() {
@@ -41,10 +48,17 @@ public class LinkedQueue<T> implements QueueInterface<T> {
 	}
 
 	public boolean isEmpty() {
-		return false;
+		return front == null;
 	}
 
 	public void printQueue() {
+		
+		QNode<T> temp =new QNode<>(front.getData());
+		
+		for (int i = 0; i < size ; i++) {
+			System.out.println(temp);
+			temp = temp.getNext();
+		}
 		
 	}
 
