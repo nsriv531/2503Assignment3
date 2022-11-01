@@ -1,8 +1,23 @@
+package mru.tsc.application;
+import mru.tsc.control.QueueController;
+import mru.tsc.model.LinkedQueue;
+import mru.tsc.model.PriorityQueue;
 
+/**
+ * 
+ * @author sriva
+ *
+ */
 public class Application {
 
+	/**
+	 * 
+	 * @param args
+	 * @throws Exception
+	 */
 	public static void main(String[] args) throws Exception {
 		
+
 		LinkedQueue<String> linkedQueue = new LinkedQueue<>();
 		
 		System.out.println("Queue: ");
@@ -30,9 +45,15 @@ public class Application {
 		priorityQueue.enqueue(9);
 		priorityQueue.enqueue(5);
 		priorityQueue.enqueue(10);
-		
+				
 		priorityQueue.printQueue();
+		priorityQueue.toString();
 
+		//QueueController queueController = new QueueController();
+		//queueController.launchApplication();
+		
+		
+		
 	}
 
 }

@@ -1,15 +1,29 @@
+package mru.tsc.model;
 
+/**
+ * 
+ * @author sriva
+ *
+ * @param <T>
+ */
 public class PriorityQueue<T> implements QueueInterface<T>{
 	
 	private int size;
 	private QNode<T> front;
 	private QNode<T> rear;
-	
+	private String queue = "";
+
+	/**
+	 * 
+	 */
 	public PriorityQueue() {
 		size = 0;
 		front = rear = null;
 	}
 
+	/**
+	 * 
+	 */
 	public void enqueue(T t) {
 		
 		if (rear != null) {
@@ -48,6 +62,9 @@ public class PriorityQueue<T> implements QueueInterface<T>{
 		
 	}
 
+	/**
+	 * 
+	 */
 	public T dequeue() throws Exception {
 		
 		if (isEmpty()) {
@@ -62,18 +79,30 @@ public class PriorityQueue<T> implements QueueInterface<T>{
 		return temp.getData();
 	}
 
+	/**
+	 * 
+	 */
 	public T peek() {
 		return front.getData();
 	}
 
+	/**
+	 * 
+	 */
 	public int getSize() {
 		return size;
 	}
 
+	/**
+	 * 
+	 */
 	public boolean isEmpty() {
 		return false;
 	}
 
+	/**
+	 * 
+	 */
 	public void printQueue() {
 		
 		QNode<T> current = front;
@@ -85,21 +114,49 @@ public class PriorityQueue<T> implements QueueInterface<T>{
 		
 	}
 
+	/**
+	 * 
+	 * @return
+	 */
 	public QNode<T> getFront() {
 		return front;
 	}
 
+	/**
+	 * 
+	 * @param front
+	 */
 	public void setFront(QNode<T> front) {
 		this.front = front;
 	}
 
+	/**
+	 * 
+	 * @return
+	 */
 	public QNode<T> getRear() {
 		return rear;
 	}
 
+	/**
+	 */
 	public QNode<T> setRear(QNode<T> rear) {
 		this.rear = rear;
 		return rear;
+	}
+	
+	public String toString() {
+	
+		QNode<T> current = front;
+		
+		while (current != null) {
+			System.out.print(current.getData() + " ");
+			queue += current.getData() + " ";
+			current = current.getNext();
+		}
+		
+		return queue;
+		
 	}
 	
 }
