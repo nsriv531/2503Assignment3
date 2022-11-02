@@ -36,19 +36,20 @@ public class PriorityQueue<T> implements QueueInterface<T>{
 				
 			for (int i = 0; i < size; i++) {
 				
-				int comparisonResult = (test.compareTo(current.getData())*-1);
+				int comparisonResult = (test.compareTo(current.getData())* - 1);
 			
-				if (i == 0 && comparisonResult  > 0) {
+				System.out.println(comparisonResult);
+				if (i == 0 && comparisonResult > 0) {
 					front = new QNode<T>(t, current);
 					break;
 				} else if (i == (size - 1) && comparisonResult < 0) {
 					rear.setNext(new QNode<T>(t, null));
 					rear = rear.getNext();
 					break;
-				} else if (comparisonResult == -1) {
+				} else if (comparisonResult < 0) {
 					previous = current;
 					current = current.getNext();
-				} else if (comparisonResult == 1) {
+				} else if (comparisonResult > 0) {
 					previous.setNext(new QNode<T>(t, current));
 				}
 				
