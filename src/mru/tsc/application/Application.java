@@ -18,6 +18,7 @@ public class Application {
 	public static void main(String[] args) throws Exception {
 		
 
+		/*
 		LinkedQueue<String> linkedQueue = new LinkedQueue<>();
 		
 		System.out.println("Queue: ");
@@ -48,11 +49,12 @@ public class Application {
 				
 		priorityQueue.printQueue();
 		priorityQueue.toString();
+		
+		*/
 
-		//QueueController queueController = new QueueController();
-		//queueController.launchApplication();
-		
-		
+		QueueController queueController = new QueueController();
+		queueController.launchApplication();
+	
 		
 	}
 

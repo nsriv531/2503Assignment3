@@ -24,6 +24,8 @@ public class PriorityQueue<T> implements QueueInterface<T>{
 	/**
 	 * 
 	 */
+	
+	@Override
 	public void enqueue(T t) {
 		
 		if (rear != null) {
@@ -65,6 +67,8 @@ public class PriorityQueue<T> implements QueueInterface<T>{
 	/**
 	 * 
 	 */
+	
+	@Override
 	public T dequeue() throws Exception {
 		
 		if (isEmpty()) {
@@ -82,6 +86,8 @@ public class PriorityQueue<T> implements QueueInterface<T>{
 	/**
 	 * 
 	 */
+	
+	@Override
 	public T peek() {
 		return front.getData();
 	}
@@ -89,6 +95,8 @@ public class PriorityQueue<T> implements QueueInterface<T>{
 	/**
 	 * 
 	 */
+	
+	@Override
 	public int getSize() {
 		return size;
 	}
@@ -96,6 +104,8 @@ public class PriorityQueue<T> implements QueueInterface<T>{
 	/**
 	 * 
 	 */
+	
+	@Override
 	public boolean isEmpty() {
 		return false;
 	}
@@ -103,6 +113,8 @@ public class PriorityQueue<T> implements QueueInterface<T>{
 	/**
 	 * 
 	 */
+	
+	@Override
 	public void printQueue() {
 		
 		QNode<T> current = front;
@@ -118,6 +130,7 @@ public class PriorityQueue<T> implements QueueInterface<T>{
 	 * 
 	 * @return
 	 */
+	
 	public QNode<T> getFront() {
 		return front;
 	}
@@ -140,11 +153,14 @@ public class PriorityQueue<T> implements QueueInterface<T>{
 
 	/**
 	 */
+	
+	
 	public QNode<T> setRear(QNode<T> rear) {
 		this.rear = rear;
 		return rear;
 	}
 	
+	@Override
 	public String toString() {
 	
 		QNode<T> current = front;

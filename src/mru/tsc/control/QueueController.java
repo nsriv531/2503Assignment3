@@ -1,7 +1,7 @@
 package mru.tsc.control;
 
 
-import java.util.PriorityQueue;
+import mru.tsc.model.PriorityQueue;
 
 import mru.tsc.model.LinkedQueue;
 import mru.tsc.model.QueueInterface;
@@ -10,13 +10,11 @@ import mru.tsc.view.AppMenu;
 public class QueueController {
 
 	private AppMenu menuObject;
-	private PriorityQueue queueObject;
 	
 	
 	public void launchApplication() throws Exception {
 		
 		LinkedQueue<String> linkedQueue = new LinkedQueue<>();
-
 		PriorityQueue<Integer> priorityQueue = new PriorityQueue<>();
 
 		boolean flag = true;
@@ -27,19 +25,31 @@ public class QueueController {
 			int menuChoice = menuObject.showMainMenu();
 			
 			switch(menuChoice) {
-				
+			
 			case 1:
-				linkedQueue.printQueue();
 				
 				break;
+			
+			
 			case 2:
 				
-				
-				System.out.println(priorityQueue.toString());
-				
+				linkedQueue.enqueue("Emilio");
+				linkedQueue.enqueue("Nikhil");
+				linkedQueue.enqueue("Nathan");
+				linkedQueue.printQueue();
+				System.out.println("");
 				break;
 				
 			case 3:
+				
+				priorityQueue.enqueue(4);
+				priorityQueue.enqueue(6);
+				priorityQueue.enqueue(10);
+				priorityQueue.printQueue();
+				System.out.println("");
+				break;
+				
+			case 4:
 				System.out.println("Goodbye!");
 				flag = false;
 				break;

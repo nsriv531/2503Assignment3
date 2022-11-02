@@ -6,8 +6,9 @@ public class AppMenu {
 		
 		private Scanner myObj; //scanner defined for the main menu.
 		private Scanner pqObj; //scanner defined for the game menu.
-		private int mainMenuChoice; //the choice that the user chooses in the main menu.
-
+		private int mainMenuChoice;
+		private String pJChoice;
+		
 		/**
 		 * AppMenu constructor, here the scanners are intialized for the two menus, being the mainmenu and the game menu.
 		 */
@@ -26,9 +27,10 @@ public class AppMenu {
 			
 			while (true) {
 		    System.out.println("Select one of these options:");
-		    System.out.println("1.   Print LinkedQueue");
-		    System.out.println("2.   Print PriorityQueue");
-		    System.out.println("3.   Exit");
+		    System.out.println("1.   Enter names for LinkedQueue");
+		    System.out.println("2.   Print LinkedQueue");
+		    System.out.println("3.   Print PriorityQueue");
+		    System.out.println("4.   Exit");
 		    System.out.print("Enter your choice: ");
 		    
 		    	if(myObj.hasNextInt()) {
@@ -46,6 +48,13 @@ public class AppMenu {
 		    }
 		    
 		}
+		
+		public String enterName() {
+			
+			System.out.println("Enter a name for the queue(s):");
+			return myObj.nextLine();
+			
+		} 
 		
 
 }

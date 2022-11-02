@@ -9,12 +9,15 @@ import mru.tsc.model.PriorityQueue;
 
 /**
  * This tests the methods associated with the priorityQueue.
- * @author sriva
+ * @author Emilio G, Nik S.
  *
  */
 class QueueTests {
 	
 	
+	/**
+	 * This tests the enqueue method for the linkedQueue.
+	 */
 	
 	@Test
 	void testLinkedEnqueue() {
@@ -29,6 +32,11 @@ class QueueTests {
 		
 	}
 
+	/**
+	 * This tests the dequeue method for the linkedQueue.
+	 * @throws Exception
+	 */
+	
 	@Test
 	void testLinkedDequeue() throws Exception {
 		
@@ -42,6 +50,10 @@ class QueueTests {
 		Assert.assertTrue(theQueue.equals("Nikhil Justin "));
 	}
 	
+	
+	/**
+	 * This tests the size of the linkedQueue.
+	 */
 	@Test
 	void testLinkedgetSize() {
 		LinkedQueue<String> linkedQueue = new LinkedQueue<>();
@@ -50,6 +62,11 @@ class QueueTests {
 		System.out.println(linkedQueue.getSize());
 		Assert.assertTrue(linkedQueue.getSize() == 2);
 	}
+	
+	
+	/**
+	 * This tests the peek method for the linkedQueue
+	 */
 	
 	@Test
 	void testLinkedPeek() {
@@ -60,7 +77,9 @@ class QueueTests {
 	}
 	
 	
-
+	/**
+	 * This tests the enqueue method for the priorityQueue.
+	 */
 	@Test
 	void testpriEnqueue() {
 
@@ -74,6 +93,12 @@ class QueueTests {
 		
 	}
 
+	
+	/**
+	 * This tests the dequeue method for the priorityQueue.
+	 * @throws Exception
+	 */
+	
 	@Test
 	void testpriDequeue() throws Exception {
 		
@@ -87,6 +112,10 @@ class QueueTests {
 		Assert.assertTrue(theQueue.equals("4 10 "));
 	}
 	
+	/**
+	 * This tests the getSize method for the priorityQueue
+	 */
+	
 	@Test
 	void testprigetSize() {
 		PriorityQueue<Integer> priority3Queue = new PriorityQueue<>();
@@ -95,6 +124,10 @@ class QueueTests {
 		System.out.println(priority3Queue.getSize());
 		Assert.assertTrue(priority3Queue.getSize() == 2);
 	}
+	
+	/**
+	 * This tests the peek method for the priorityQueue.
+	 */
 	
 	@Test
 	void testpriPeek() {
