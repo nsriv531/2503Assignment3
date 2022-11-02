@@ -1,14 +1,16 @@
 package mru.tsc.view;
-
 import java.util.Scanner;
+/**
+ * Actual class for the app menu, interface to operate between queues and printing said queues.
+ * @author Emilio G, Nik S.
+ *
+ */
 
 public class AppMenu {
 		
 		private Scanner myObj; //scanner defined for the main menu.
-		private Scanner pqObj; //scanner defined for the game menu.
-		private int mainMenuChoice;
-		private String pJChoice;
-		
+		private int mainMenuChoice; //mainMenu integer to recieve the interger used for the mainmenu function.
+	
 		/**
 		 * AppMenu constructor, here the scanners are intialized for the two menus, being the mainmenu and the game menu.
 		 */
@@ -16,18 +18,17 @@ public class AppMenu {
 		public AppMenu() {
 			
 			myObj = new Scanner(System.in);
-			pqObj = new Scanner(System.in);
 		
 		}
 
 		/**
-		 * Main menu for the game.
+		 * Main menu for the game. Cycle between pr
 		 */
 		public int showMainMenu() {
 			
 			while (true) {
 		    System.out.println("Select one of these options:");
-		    System.out.println("1.   Enter names for LinkedQueue");
+		    System.out.println("1.   Enter names for queue(s)");
 		    System.out.println("2.   Print LinkedQueue");
 		    System.out.println("3.   Print PriorityQueue");
 		    System.out.println("4.   Exit");
@@ -35,6 +36,7 @@ public class AppMenu {
 		    
 		    	if(myObj.hasNextInt()) {
 		    		mainMenuChoice = myObj.nextInt();
+		    		myObj.nextLine();
 		    	    return mainMenuChoice;
 		    	}
 		    	
@@ -49,10 +51,24 @@ public class AppMenu {
 		    
 		}
 		
+		/**
+		 * Enter the name of the queue. Various names can be entered in here.
+		 * @return userInput - input for the queue that the user enters.
+		 */
+		
 		public String enterName() {
 			
+			
 			System.out.println("Enter a name for the queue(s):");
-			return myObj.nextLine();
+			String userInput = myObj.nextLine();
+			
+			while(userInput.equals("")) {
+				System.out.println("Input is empty, try again!");
+				userInput = myObj.nextLine();
+				
+			}
+			
+			return userInput;
 			
 		} 
 		

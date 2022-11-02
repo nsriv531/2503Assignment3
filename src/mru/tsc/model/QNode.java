@@ -1,19 +1,19 @@
 package mru.tsc.model;
 /**
- * 
- * @author sriva
+ * Actual node notation for the set of the queue.
+ * @author Emilio G, Nik S.
  *
- * @param <T>
+ * @param <T> generic type, casted to recieve various data types for the Nodes set for the PriorityQueue.
  */
 public class QNode<T> {
 
-	private T data;
-	private QNode<T> next;
+	private T data; //data passed in through the node of the queue.
+	private QNode<T> next; //the next node for the queue.
 	
 	/**
-	 * 
-	 * @param data
-	 * @param next
+	 * Constructor that takes in data, and a generic type next
+	 * @param data is set
+	 * @param QNode<T> next is set for the next node
 	 */
 	public QNode(T data, QNode<T> next) {
 		this.data = data;
@@ -21,32 +21,32 @@ public class QNode<T> {
 	}
 
 	/**
-	 * 
-	 * @return
+	 * gets the data of the node
+	 * @return data for said node
 	 */
 	public T getData() {
 		return data;
 	}
 
 	/**
-	 * 
-	 * @param data
+	 * sets the data of the node
+	 * @param passed indata for said node
 	 */
 	public void setData(T data) {
 		this.data = data;
 	}
 
 	/**
-	 * 
-	 * @return
+	 * gets the next node
+	 * @return the next node
 	 */
 	public QNode<T> getNext() {
 		return next;
 	}
 
 	/**
-	 * 
-	 * @param next
+	 * the next node that is then set
+	 * @param QNode<T> next - is the actual next node.
 	 */
 	public void setNext(QNode<T> next) {
 		this.next = next;

@@ -1,9 +1,7 @@
 package JUnitTest;
 import static org.junit.jupiter.api.Assertions.*;
-
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
-
 import mru.tsc.model.LinkedQueue;
 import mru.tsc.model.PriorityQueue;
 

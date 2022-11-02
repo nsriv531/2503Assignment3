@@ -1,20 +1,19 @@
 package mru.tsc.model;
 
 /**
- * 
- * @author sriva
- *
- * @param <T>
+ * This class is responsible for a queue that is based on prioritization.
+ * @author Emilio G, Nik S.
+ * @param <T> generic type that is then implemented via an interface.
  */
 public class PriorityQueue<T> implements QueueInterface<T>{
 	
-	private int size;
-	private QNode<T> front;
-	private QNode<T> rear;
-	private String queue = "";
+	private int size; //size of the queue.
+	private QNode<T> front; //front of the queue.
+	private QNode<T> rear; //last of the queue.
+	private String queue = ""; //set to default and blank for testing purposes.
 
 	/**
-	 * 
+	 * Default constructor, where size is 0 and the front and rear are set to null.
 	 */
 	public PriorityQueue() {
 		size = 0;
@@ -22,7 +21,7 @@ public class PriorityQueue<T> implements QueueInterface<T>{
 	}
 
 	/**
-	 * 
+	 * Enqueue method for the priority queue in which data is added. Size is incremented accordingly.
 	 */
 	
 	@Override
@@ -37,12 +36,12 @@ public class PriorityQueue<T> implements QueueInterface<T>{
 				
 			for (int i = 0; i < size; i++) {
 				
-				int comparisonResult = (test.compareTo(current.getData()) * - 1);
-				
-				if (i == 0 && comparisonResult == 1) {
+				int comparisonResult = (test.compareTo(current.getData())*-1);
+			
+				if (i == 0 && comparisonResult  > 0) {
 					front = new QNode<T>(t, current);
 					break;
-				} else if (i == (size - 1) && comparisonResult == -1) {
+				} else if (i == (size - 1) && comparisonResult < 0) {
 					rear.setNext(new QNode<T>(t, null));
 					rear = rear.getNext();
 					break;
@@ -65,7 +64,7 @@ public class PriorityQueue<T> implements QueueInterface<T>{
 	}
 
 	/**
-	 * 
+	 * Dequeue method is used to remove from the queue.
 	 */
 	
 	@Override
@@ -84,7 +83,7 @@ public class PriorityQueue<T> implements QueueInterface<T>{
 	}
 
 	/**
-	 * 
+	 * peek method to peek within the prioritiyqueue.
 	 */
 	
 	@Override
@@ -93,7 +92,7 @@ public class PriorityQueue<T> implements QueueInterface<T>{
 	}
 
 	/**
-	 * 
+	 * gets the size of the queue.
 	 */
 	
 	@Override
@@ -102,7 +101,7 @@ public class PriorityQueue<T> implements QueueInterface<T>{
 	}
 
 	/**
-	 * 
+	 * detects of the queue is empty or not.
 	 */
 	
 	@Override
@@ -111,7 +110,7 @@ public class PriorityQueue<T> implements QueueInterface<T>{
 	}
 
 	/**
-	 * 
+	 * prints the queue accordingly.
 	 */
 	
 	@Override
@@ -127,8 +126,8 @@ public class PriorityQueue<T> implements QueueInterface<T>{
 	}
 
 	/**
-	 * 
-	 * @return
+	 * gets the front of the queue.
+	 * @return front - front of the queue.
 	 */
 	
 	public QNode<T> getFront() {
@@ -136,22 +135,24 @@ public class PriorityQueue<T> implements QueueInterface<T>{
 	}
 
 	/**
-	 * 
-	 * @param front
+	 * front of the queue is passed
+	 * @param front is then officially set.
 	 */
 	public void setFront(QNode<T> front) {
 		this.front = front;
 	}
 
 	/**
-	 * 
-	 * @return
+	 * gets the rear of the prioritiyQueue
+	 * @return rear is returned for the queue.
 	 */
 	public QNode<T> getRear() {
 		return rear;
 	}
 
 	/**
+	 * sets the rear by passing in the queue as a parameter
+	 * @return rear of the queue is returned
 	 */
 	
 	
@@ -160,6 +161,10 @@ public class PriorityQueue<T> implements QueueInterface<T>{
 		return rear;
 	}
 	
+	/**
+	 * To string method for the queue for testing purposes
+	 * @return the queue to be displayed.
+	 */
 	@Override
 	public String toString() {
 	

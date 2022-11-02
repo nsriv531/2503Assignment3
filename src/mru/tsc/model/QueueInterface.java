@@ -1,9 +1,9 @@
 package mru.tsc.model;
 /**
- * 
- * @author sriva
+ * Interface for the queue that imports the methods neccessary and are needed.
+ * @author Emilio G, Nik S.
  *
- * @param <T>
+ * @param <T> generic type casted for various types of data.
  */
 public interface QueueInterface<T> {
 
