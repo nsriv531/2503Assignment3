@@ -49,6 +49,17 @@ public class Application {
 				System.out.println("");
 				break;
 			case 4:
+				System.out.println("");
+				System.out.println("LinkedQueue that has been dequed:");
+				System.out.println(linkedQueue.dequeue());
+				System.out.println(linkedQueue.dequeue());
+				System.out.println("");
+				System.out.println("PrioritiyQueue that has been dequed: ");
+				System.out.println(priorityQueue.dequeue());
+				System.out.println(priorityQueue.dequeue());
+				System.out.println("");
+				break;
+			case 5:
 				System.out.println("Thank you for working with queues...");
 				flag = false;
 				break;

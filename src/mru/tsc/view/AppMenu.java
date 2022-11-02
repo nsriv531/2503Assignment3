@@ -31,7 +31,8 @@ public class AppMenu {
 		    System.out.println("1.   Enter names for queue(s)");
 		    System.out.println("2.   Print LinkedQueue");
 		    System.out.println("3.   Print PriorityQueue");
-		    System.out.println("4.   Exit");
+		    System.out.println("4.   Dequeue two items");
+		    System.out.println("5.   Exit");
 		    System.out.print("Enter your choice: ");
 		    
 		    	if(myObj.hasNextInt()) {

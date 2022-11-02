@@ -51,6 +51,8 @@ public class PriorityQueue<T> implements QueueInterface<T>{
 					current = current.getNext();
 				} else if (comparisonResult > 0) {
 					previous.setNext(new QNode<T>(t, current));
+				} else if (comparisonResult == 0) {
+					
 				}
 				
 			}
