@@ -29,17 +29,16 @@ public class PriorityQueue<T> implements QueueInterface<T>{
 		
 		if (rear != null) {
 			
-			Comparable<T> test = (Comparable<T>)t;
+			Comparable<T> enqueueComparable = (Comparable<T>)t;
 			
 			QNode<T> current = front;
 			QNode<T> previous = null;
 				
 			for (int i = 0; i < size; i++) {
 				
-				int comparisonResult = (test.compareTo(current.getData())* - 1);
+				int comparisonResult = (enqueueComparable.compareTo(current.getData())* - 1);
 			
-				System.out.println(comparisonResult);
-				if (i == 0 && comparisonResult > 0) {
+				if ( (i == 0 && comparisonResult > 0) || (i == 0 && comparisonResult == 0) ) {
 					front = new QNode<T>(t, current);
 					break;
 				} else if (i == (size - 1) && comparisonResult < 0) {
@@ -49,11 +48,9 @@ public class PriorityQueue<T> implements QueueInterface<T>{
 				} else if (comparisonResult < 0) {
 					previous = current;
 					current = current.getNext();
-				} else if (comparisonResult > 0) {
+				} else if (comparisonResult > 0 || comparisonResult == 0) {
 					previous.setNext(new QNode<T>(t, current));
-				} else if (comparisonResult == 0) {
-					
-				}
+				} 
 				
 			}
 			

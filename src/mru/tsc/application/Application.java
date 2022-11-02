@@ -49,6 +49,7 @@ public class Application {
 				System.out.println("");
 				break;
 			case 4:
+				try {
 				System.out.println("");
 				System.out.println("LinkedQueue that has been dequed:");
 				System.out.println(linkedQueue.dequeue());
@@ -58,6 +59,11 @@ public class Application {
 				System.out.println(priorityQueue.dequeue());
 				System.out.println(priorityQueue.dequeue());
 				System.out.println("");
+				}
+				catch(Exception E) {
+					System.out.println(E.getMessage());
+					System.out.println("");
+				}
 				break;
 			case 5:
 				System.out.println("Thank you for working with queues...");
