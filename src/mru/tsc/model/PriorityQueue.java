@@ -32,25 +32,37 @@ public class PriorityQueue<T> implements QueueInterface<T>{
 			Comparable<T> enqueueComparable = (Comparable<T>)t;
 			
 			QNode<T> current = front;
-			QNode<T> previous = null;
+			QNode<T> previous = front;
+			int counter = 0;
 				
-			for (int i = 0; i < size; i++) {
-				
-				int comparisonResult = (enqueueComparable.compareTo(current.getData())* - 1);
+			int comparisonResult = 0;
 			
-				if ( (i == 0 && comparisonResult > 0) || (i == 0 && comparisonResult == 0) ) {
-					front = new QNode<T>(t, current);
+			while (current != null) {
+				
+				counter++;
+				QNode<T> nodeToAdd = new QNode<T>(t, null);
+				comparisonResult = (enqueueComparable.compareTo(current.getData()));
+				
+				if (counter == 1 && comparisonResult < 0) {
+					front = nodeToAdd;
+					nodeToAdd.setNext(current);
 					break;
-				} else if (i == (size - 1) && comparisonResult < 0) {
-					rear.setNext(new QNode<T>(t, null));
-					rear = rear.getNext();
+				} else if (counter == size && comparisonResult > 0 || counter == size && comparisonResult == 0) {
+					current.setNext(nodeToAdd);
+					rear = nodeToAdd;
 					break;
-				} else if (comparisonResult < 0) {
+				} else if (comparisonResult > 0) {
 					previous = current;
 					current = current.getNext();
-				} else if (comparisonResult > 0 || comparisonResult == 0) {
-					previous.setNext(new QNode<T>(t, current));
-				} 
+				} else if (comparisonResult < 0) {
+					previous.setNext(nodeToAdd);
+					nodeToAdd.setNext(current);
+					break;
+				} else if (comparisonResult == 0) {
+					nodeToAdd.setNext(current.getNext());
+					current.setNext(nodeToAdd);
+					break;
+				}
 				
 			}
 			
