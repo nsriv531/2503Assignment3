@@ -106,7 +106,7 @@ public class PriorityQueue<T> implements QueueInterface<T>{
 	
 	@Override
 	public boolean isEmpty() {
-		return false;
+		return front == null;
 	}
 
 	/**

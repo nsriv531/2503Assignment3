@@ -38,16 +38,37 @@ public class Application {
 				System.out.println("Name has been added to the queue!");
 				break;
 			case 2:
+				
+				if (linkedQueue.isEmpty()) {
+					System.out.println("");
+					System.out.println("LinkedQueue is Empty");
+					System.out.println("");
+					break;
+				}
+				
+				else {
 				System.out.println("");
 				linkedQueue.printQueue();
 				System.out.println("");
 				break;		
+				}
+				
 			case 3:
-				System.out.println("");
-				priorityQueue.printQueue();
-				System.out.println("");
-				System.out.println("");
-				break;
+				if (priorityQueue.isEmpty()) {
+					System.out.println("");
+					System.out.println("prioritiyQueue is Empty");
+					System.out.println("");
+					break;
+				}
+				
+				else {
+					System.out.println("");
+					priorityQueue.printQueue();
+					System.out.println("");
+					System.out.println("");
+					break;
+					
+				}
 			case 4:
 				try {
 				System.out.println("");
